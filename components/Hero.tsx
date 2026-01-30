@@ -15,7 +15,7 @@ export default function Hero() {
           className="w-full h-full object-cover"
           poster="/videos/poster.jpg"
         >
-          <source src="/videos/3d-printer-loop.mp4" type="video/mp4" />
+          <source src="/videos/3d-printer.mp4" type="video/mp4" />
         </video>
         {/* Overlay */}
         <div className="absolute inset-0 video-overlay" />
