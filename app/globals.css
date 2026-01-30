@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background-primary: #131F2F;
+  --background-secondary: #102E4D;
+  --accent-primary: #FE9B62;
+  --accent-secondary: #E66F5C;
+  --text-primary: #F0F0F0;
+  --muted: #3F4F7E;
+  --subtle: #695C7B;
+}
+
+@theme inline {
+  --color-background-primary: var(--background-primary);
+  --color-background-secondary: var(--background-secondary);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Neon glow utilities */
+.neon-glow {
+  box-shadow:
+    0 0 5px rgba(230, 111, 92, 0.3),
+    0 0 10px rgba(230, 111, 92, 0.2),
+    0 0 20px rgba(254, 155, 98, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.neon-glow-hover:hover {
+  box-shadow:
+    0 0 10px rgba(230, 111, 92, 0.5),
+    0 0 20px rgba(230, 111, 92, 0.4),
+    0 0 40px rgba(254, 155, 98, 0.3),
+    0 0 60px rgba(254, 155, 98, 0.2);
+}
+
+.neon-glow-intense {
+  box-shadow:
+    0 0 10px rgba(230, 111, 92, 0.6),
+    0 0 20px rgba(230, 111, 92, 0.5),
+    0 0 40px rgba(254, 155, 98, 0.4),
+    0 0 80px rgba(254, 155, 98, 0.3);
+}
+
+/* Form expansion animation */
+.pulse-form-container {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Video overlay for hero */
+.video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(19, 31, 47, 0.7) 0%,
+    rgba(19, 31, 47, 0.85) 50%,
+    rgba(19, 31, 47, 0.95) 100%
+  );
+}
+
+/* Lightbox backdrop */
+.lightbox-backdrop {
+  background: rgba(19, 31, 47, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--subtle);
+}
