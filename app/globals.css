@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background-primary: #131F2F;
-  --background-secondary: #102E4D;
+  --background-primary: #001528;
+  --background-secondary: #131F2F;
   --accent-primary: #FE9B62;
-  --accent-secondary: #E66F5C;
+  --accent-secondary: #FF7A3C;
   --text-primary: #F0F0F0;
-  --muted: #3F4F7E;
-  --subtle: #695C7B;
+  --muted: #00AFB9;
+  --subtle: #42DAFF;
 }
 
 @theme inline {
@@ -20,6 +20,7 @@
   --color-subtle: var(--subtle);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-omnium: var(--font-omnium);
 }
 
 body {
@@ -62,15 +63,15 @@ body {
 .video-overlay {
   background: linear-gradient(
     to bottom,
-    rgba(19, 31, 47, 0.7) 0%,
-    rgba(19, 31, 47, 0.85) 50%,
-    rgba(19, 31, 47, 0.95) 100%
+    rgba(0, 21, 40, 0.7) 0%,
+    rgba(0, 21, 40, 0.85) 50%,
+    rgba(0, 21, 40, 0.95) 100%
   );
 }
 
 /* Lightbox backdrop */
 .lightbox-backdrop {
-  background: rgba(19, 31, 47, 0.95);
+  background: rgba(0, 21, 40, 0.95);
   backdrop-filter: blur(8px);
 }
 

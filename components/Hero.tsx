@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import PulseForm from "./PulseForm";
 
 export default function Hero() {
@@ -23,13 +24,25 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight">
+        {/* Logo */}
+        <div className="mb-8 flex justify-center">
+          <Image
+            src="/logo.png"
+            alt="Chuabacca Custom Creations"
+            width={200}
+            height={200}
+            className="drop-shadow-2xl"
+            priority
+          />
+        </div>
+
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight font-[family-name:var(--font-omnium)]">
           <span className="text-text-primary">Chuabacca</span>{" "}
           <span className="text-accent-primary">Custom Creations</span>
         </h1>
-        <p className="text-lg md:text-xl text-subtle mb-12 max-w-2xl mx-auto">
-          Bringing your ideas to life, one layer at a time. Custom 3D printing
-          for cosplay, functional parts, and creative projects.
+        <p className="text-lg md:text-xl text-primary mb-12 max-w-2xl mx-auto">
+          Plan, prototype, print.
+          Custom design and production services.
         </p>
 
         <PulseForm />

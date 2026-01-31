@@ -21,12 +21,8 @@ export default function Gallery() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
-            Gallery
+            Project Gallery
           </h2>
-          <p className="text-subtle max-w-2xl mx-auto">
-            A showcase of recent projects. From functional parts to artistic
-            pieces, every print tells a story.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

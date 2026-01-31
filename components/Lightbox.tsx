@@ -62,25 +62,27 @@ export default function Lightbox({ item, onClose }: LightboxProps) {
       </button>
 
       {/* Content */}
-      <div className="bg-background-secondary rounded-lg overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row neon-glow-intense">
-        {/* Image */}
-        <div className="relative w-full md:w-2/3 aspect-square md:aspect-auto">
+      <div className="relative w-full h-full flex items-center justify-center">
+        {/* Image - takes up most of the screen */}
+        <div className="relative w-full h-full max-w-[95vw] max-h-[95vh]">
           <Image
             src={item.src}
             alt={item.title}
             fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 66vw"
+            className="object-contain"
+            sizes="95vw"
             priority
           />
         </div>
 
-        {/* Details */}
-        <div className="p-6 md:w-1/3 flex flex-col justify-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-text-primary mb-4">
-            {item.title}
-          </h2>
-          <p className="text-subtle leading-relaxed">{item.description}</p>
+        {/* Details - overlay at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background-primary/95 via-background-primary/85 to-transparent p-6 md:p-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-2">
+              {item.title}
+            </h2>
+            <p className="text-subtle text-base md:text-lg leading-relaxed">{item.description}</p>
+          </div>
         </div>
       </div>
     </div>

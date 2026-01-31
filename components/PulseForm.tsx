@@ -65,7 +65,7 @@ export default function PulseForm() {
             Request Sent!
           </h3>
           <p className="text-subtle">
-            We&apos;ll get back to you within 24-48 hours.
+            We&apos;ll get back to you soon!
           </p>
         </div>
       </div>
@@ -104,7 +104,7 @@ export default function PulseForm() {
             <div className="h-px bg-muted/50" />
             <textarea
               name="projectDetails"
-              placeholder="Tell us about your project... What do you want to create?"
+              placeholder="What would you like to create?"
               rows={4}
               className="w-full bg-background-primary/50 border border-muted/50 rounded-lg p-3 text-text-primary placeholder:text-muted outline-none focus:border-accent-primary/50 resize-none"
             />
