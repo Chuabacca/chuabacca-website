@@ -6,14 +6,29 @@ import GalleryTile from "./GalleryTile";
 import Lightbox from "./Lightbox";
 
 export default function Gallery() {
-  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const handleTileClick = (item: GalleryItem) => {
-    setSelectedItem(item);
+    const index = galleryItems.findIndex((i) => i.id === item.id);
+    setSelectedIndex(index);
   };
 
   const handleCloseLightbox = () => {
-    setSelectedItem(null);
+    setSelectedIndex(null);
+  };
+
+  const handleNext = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % galleryItems.length);
+    }
+  };
+
+  const handlePrev = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex(
+        (selectedIndex - 1 + galleryItems.length) % galleryItems.length
+      );
+    }
   };
 
   return (
@@ -36,8 +51,13 @@ export default function Gallery() {
         </div>
       </div>
 
-      {selectedItem && (
-        <Lightbox item={selectedItem} onClose={handleCloseLightbox} />
+      {selectedIndex !== null && (
+        <Lightbox
+          item={galleryItems[selectedIndex]}
+          onClose={handleCloseLightbox}
+          onNext={handleNext}
+          onPrev={handlePrev}
+        />
       )}
     </section>
   );

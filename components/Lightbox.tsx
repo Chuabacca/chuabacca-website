@@ -7,16 +7,22 @@ import { GalleryItem } from "@/data/gallery";
 interface LightboxProps {
   item: GalleryItem;
   onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
 }
 
-export default function Lightbox({ item, onClose }: LightboxProps) {
+export default function Lightbox({ item, onClose, onNext, onPrev }: LightboxProps) {
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
+      } else if (e.key === "ArrowRight") {
+        onNext();
+      } else if (e.key === "ArrowLeft") {
+        onPrev();
       }
     },
-    [onClose]
+    [onClose, onNext, onPrev]
   );
 
   useEffect(() => {
@@ -63,6 +69,48 @@ export default function Lightbox({ item, onClose }: LightboxProps) {
 
       {/* Content */}
       <div className="relative w-full h-full flex items-center justify-center">
+        {/* Previous button */}
+        <button
+          onClick={onPrev}
+          className="absolute left-4 md:left-8 z-10 text-text-primary hover:text-accent-primary transition-colors bg-background-secondary/80 hover:bg-background-secondary rounded-full p-3 md:p-4"
+          aria-label="Previous image"
+        >
+          <svg
+            className="w-6 h-6 md:w-8 md:h-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        {/* Next button */}
+        <button
+          onClick={onNext}
+          className="absolute right-4 md:right-8 z-10 text-text-primary hover:text-accent-primary transition-colors bg-background-secondary/80 hover:bg-background-secondary rounded-full p-3 md:p-4"
+          aria-label="Next image"
+        >
+          <svg
+            className="w-6 h-6 md:w-8 md:h-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+
         {/* Image - takes up most of the screen */}
         <div className="relative w-full h-full max-w-[95vw] max-h-[95vh]">
           <Image

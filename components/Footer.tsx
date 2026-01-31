@@ -35,7 +35,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-muted/30 text-center">
           <p className="text-muted text-sm">
-            &copy; 2026 Chuabacca Custom Creations.
+            &copy; 2026 Chuabacca Custom Creations
           </p>
         </div>
       </div>
